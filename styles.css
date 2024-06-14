@@ -89,4 +89,17 @@ body, html {
 .content h2 {
     color: #007BFF;
 }
+.logo-container {
+    display: flex;
+    align-items: center; /* Align items vertically center */
+}
+
+.logo {
+    margin-right: 10px; /* Adjust spacing between logo and site name */
+}
+
+.site-name {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-weight: bold;
+}
 
