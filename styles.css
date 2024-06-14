@@ -101,5 +101,6 @@ body, html {
 .site-name {
     font-size: 1.5rem; /* Adjust font size as needed */
     font-weight: bold;
+    line-height: 1;
 }
 
