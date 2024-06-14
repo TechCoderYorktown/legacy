@@ -89,12 +89,13 @@ body, html {
 .content h2 {
     color: #007BFF;
 }
+
 .logo-container {
     display: flex;
     align-items: center; /* Align items vertically center */
 }
 
-.logo {
+.logo-container .logo {
     margin-right: 10px; /* Adjust spacing between logo and site name */
 }
 
@@ -103,4 +104,3 @@ body, html {
     font-weight: bold;
     line-height: 1;
 }
-
