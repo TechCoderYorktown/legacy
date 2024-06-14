@@ -30,18 +30,15 @@ body, html {
     padding: 15px;
 }
 
-/* Base styles for all links */
 .nav-links li a {
     color: white; /* Set your desired color */
     text-decoration: none;
 }
 
-/* Hover state for links */
 .nav-links li a:hover {
     text-decoration: underline; /* Optional: add underline on hover */
 }
 
-/* Visited links */
 .nav-links li a:visited {
     color: white; /* Ensure visited links have the same color */
 }
@@ -92,7 +89,7 @@ body, html {
 
 .logo-container {
     display: flex;
-    align-items: left; /* Align items vertically center */
+    align-items: center; /* Align items vertically center */
 }
 
 .logo-container .logo {
