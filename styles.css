@@ -92,7 +92,7 @@ body, html {
 
 .logo-container {
     display: flex;
-    align-items: center; /* Align items vertically center */
+    align-items: left; /* Align items vertically center */
 }
 
 .logo-container .logo {
