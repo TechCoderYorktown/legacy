@@ -105,3 +105,35 @@ body, html {
 .logo-container .site-name {
     margin-left: 10px; /* Adjust spacing between logo and site name */
 }
+
+.subjects {
+    padding: 20px;
+}
+
+.subjects h2 {
+    text-align: center;
+    color: #007BFF;
+}
+
+.subject-container {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed: space-between, space-evenly, etc. */
+    align-items: center; /* Align items vertically center */
+    flex-wrap: wrap; /* Allows wrapping of items to new lines if they exceed container width */
+}
+
+.subject-section {
+    text-align: center;
+    margin: 10px; /* Adjust spacing between subjects */
+    max-width: 200px; /* Adjust maximum width of each subject section */
+}
+
+.subject-section img {
+    max-width: 100%; /* Ensure images scale proportionally */
+}
+
+.subject-section h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
