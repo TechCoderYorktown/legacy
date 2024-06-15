@@ -130,5 +130,11 @@ body {
   border-color: var(--color-error);
 }
 
+.form__input-error-message {
+  margin-top: 0.5ren;
+  font-size: 0.85ren;
+  color: var(--color-error);
+}
+  
   
   
