@@ -153,3 +153,7 @@ body {
 .form__link:hover {
   text-decoration: underline;
 }
+
+.form--hidden {
+  display:none;
+}
