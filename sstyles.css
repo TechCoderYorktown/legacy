@@ -11,6 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Quicksand', sans-serif;
   font-size: 18px;
   background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZbMKdv5QpQz8gNiLbnFQkUD0pmjOCmejDFpGd4LxpqJbpthSRST8qSIrag6CwUOx4UU&usqp=CAU);
   background-size: cover;
@@ -23,20 +24,6 @@ body {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   border-radius: var(--border-radius);
   background: #ffffff;
-}
-
-.container,
-.form__input,
-.form__button {
-  font: 500 1rem 'Quicksand', sans-serif;
-}
-
-.form > *:first-child {
-  margin-top: 0;
-}
-
-.form > *:last-child {
-  margin-bottom: 0;
 }
 
 .form__title {
@@ -66,6 +53,14 @@ body {
   padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
+  transition: background-color 0.3s, border-color 0.3s;
+  background-color: #eeeeee;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: #ffffff;
 }
 
 .form__button {
@@ -77,7 +72,7 @@ body {
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .form__button:hover {
@@ -86,74 +81,28 @@ body {
 
 .form__text {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .form__link {
   color: var(--color-secondary);
   text-decoration: none;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .form__link:hover {
   color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.form--hidden {
+  display: none;
 }
 
 .form__input-error-message {
   color: var(--color-error);
   font-size: 0.875rem;
   display: none;
-}
-
-.form__input-group {
-  margin-bottom: 1rem;
-}
-
-.form__input {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  box-sizing: border-box;
-  border-radius: var(--border-radius);
-  border: 1px solid #dddddd;
-  outline: none;
-  background: #eeeeee;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.form__input:focus {
-  border-color: var(--color-primary);
-  background: #ffffff;
-}
-
-.form__input--error {
-  color: var(--color-error);
-  border-color: var(--color-error);
-}
-
-.form__input-error-message {
-  margin-top: 0.5ren;
-  font-size: 0.85ren;
-  color: var(--color-error);
-}
-
-.form__button:active {
-  transform: scale(0.98);
-}
-  
-.form__text {
-  test-align: center;
-}
-
-.form__link {
-  color: var(--color-secondary);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.form__link:hover {
-  text-decoration: underline;
-}
-
-.form--hidden {
-  display:none;
+  margin-top: 0.5rem;
 }
