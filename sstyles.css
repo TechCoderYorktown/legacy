@@ -1,18 +1,59 @@
 body {
-  --color-primary:#009579;
-  --color-primary-dark:#007f67;
-  --color-secondary:#252c6a;
-  --color-error:#cc3333;
-  --color-sucess:#4bb544;
+  --color-primary: #009579;
+  --color-primary-dark: #007f67;
+  --color-secondary: #252c6a;
+  --color-error: #cc3333;
+  --color-success: #4bb544;
   --border-radius: 4px;
 
   margin:0;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
   font-size: 18px;
   background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwZbMKdv5QpQz8gNiLbnFQkUD0pmjOCmejDFpGd4LxpqJbpthSRST8qSIrag6CwUOx4UU&usqp=CAU);
   background-size: cover;
+}
 
+.container {
+  width: 400px;
+  max-width: 400 px;
+  margin: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(0,  0, 0, 0.2);
+  border-radius: var(--border-radius);
+  background: #ffffff;
+}
+
+.container,
+.form__input,
+.form__button {
+  font: 500 1rem 'Quicksand', sans-serif;
+}
+
+.form > *:first-child {
+  margin-top:0;
+}
+
+.form > *:last-child {
+  margin-bottom:0;
+}
+
+.form__title{
+  marhin-bottom: 2rem;
+  tect-align: center;
+}
+
+.form__message{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form__message--success {
+  color: var(--color-success);
+}
+
+.form__message--error {
+  color: var(--color-error);
 }
