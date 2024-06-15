@@ -143,3 +143,13 @@ body {
 .form__text {
   test-align: center;
 }
+
+.form__link {
+  color: var(--color-secondary);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form__link:hover {
+  text-decoration: underline;
+}
