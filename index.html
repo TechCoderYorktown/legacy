@@ -4,20 +4,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <title>Login/Sign Up Form</title>
-  <link rel="stylesheet" href="sstyles.css"> <!-- Ensure this path is correct -->
+  <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
   <div class="container">
     <form class="form form--hidden" id="login">
       <h1 class="form__title">Login</h1>
-      <div class="form__message form__message--error" id="errorMessage"></div>
+      <div class="form__message form__message--error" id="loginErrorMessage"></div>
       <div class="form__input-group">
-        <input type="text" class="form__input" autofocus placeholder="Username or email" id="username">
-        <div class="form__input-error-message"></div>
+        <input type="text" class="form__input" autofocus placeholder="Username or email" id="loginUsername">
+        <div class="form__input-error-message" id="loginUsernameError"></div>
       </div>
       <div class="form__input-group">
-        <input type="password" class="form__input" autofocus placeholder="Password" id="password">
-        <div class="form__input-error-message"></div>
+        <input type="password" class="form__input" placeholder="Password" id="loginPassword">
+        <div class="form__input-error-message" id="loginPasswordError"></div>
       </div>
       <button class="form__button" type="submit">Continue</button>
       <p class="form__text">
@@ -29,22 +29,22 @@
     </form>
     <form class="form" id="createAccount">
       <h1 class="form__title">Create Account</h1>
-      <div class="form__message form__message--error" id="errorMessage"></div>
+      <div class="form__message form__message--error" id="createAccountErrorMessage"></div>
       <div class="form__input-group">
-        <input type="text" class="form__input" autofocus placeholder="Username" id="username">
-        <div class="form__input-error-message"></div>
+        <input type="text" class="form__input" autofocus placeholder="Username" id="createUsername">
+        <div class="form__input-error-message" id="createUsernameError"></div>
       </div>
       <div class="form__input-group">
-        <input type="text" class="form__input" autofocus placeholder="Email Address" id="emailAddress">
-        <div class="form__input-error-message"></div>
+        <input type="text" class="form__input" autofocus placeholder="Email Address" id="createEmailAddress">
+        <div class="form__input-error-message" id="createEmailAddressError"></div>
       </div>
       <div class="form__input-group">
-        <input type="password" class="form__input" autofocus placeholder="Password" id="password">
-        <div class="form__input-error-message"></div>
+        <input type="password" class="form__input" autofocus placeholder="Password" id="createPassword">
+        <div class="form__input-error-message" id="createPasswordError"></div>
       </div>
       <div class="form__input-group">
-        <input type="text" class="form__input" autofocus placeholder="Confirm Password" id="confirmPassword">
-        <div class="form__input-error-message"></div>
+        <input type="password" class="form__input" autofocus placeholder="Confirm Password" id="confirmPassword">
+        <div class="form__input-error-message" id="confirmPasswordError"></div>
       </div>
       <button class="form__button" type="submit">Continue</button>
       <p class="form__text">
