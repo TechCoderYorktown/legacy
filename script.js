@@ -1,22 +1,19 @@
 function handleSignIn(event) {
-  event.preventDefault(); // Prevent form submission
+  event.preventDefault(); // Prevent the form from submitting in default way
 
   var username = document.getElementById('username').value;
   var password = document.getElementById('password').value;
 
-  // Replace with your Google Apps Script URL
-  var url = 'https://script.google.com/macros/s/AKfycbwuH-Am4YAV9UZFcQ5JSX5QmtOsgGsfCrCPwerfxFiFAKBNCYC_9GdwrqID2Cfnr2q_/exec';
-
-  // Example of how you might handle the response from the server
-  fetch(url, {
+  fetch('https://script.google.com/macros/s/AKfycbwuH-Am4YAV9UZFcQ5JSX5QmtOsgGsfCrCPwerfxFiFAKBNCYC_9GdwrqID2Cfnr2q_/exec', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
-    body: JSON.stringify({ username: username, password: password })
+    body: 'username=' + encodeURIComponent(username) + '&password=' + encodeURIComponent(password)
   })
-  .then(response => {
-    if (response.ok) {
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
       document.getElementById('error').innerText = '';
       window.location.href = 'https://techcoderyorktown.github.io'; // Replace with your desired redirect URL after successful login
     } else {
@@ -24,7 +21,7 @@ function handleSignIn(event) {
     }
   })
   .catch(error => {
-    document.getElementById('error').innerText = 'An error occurred. Please try again.';
     console.error('Error:', error);
+    document.getElementById('error').innerText = 'An error occurred. Please try again.';
   });
 }
