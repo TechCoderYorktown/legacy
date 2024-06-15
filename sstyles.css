@@ -55,6 +55,7 @@ body {
   border-radius: var(--border-radius);
   transition: background-color 0.3s, border-color 0.3s;
   background-color: #eeeeee;
+  font-size: 1rem;
 }
 
 .form__input:focus {
@@ -77,6 +78,10 @@ body {
 
 .form__button:hover {
   background-color: var(--color-primary-dark);
+}
+
+.form__button:active {
+  transform: scale(0.98);
 }
 
 .form__text {
