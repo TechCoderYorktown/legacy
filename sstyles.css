@@ -6,7 +6,7 @@ body {
   --color-success: #4bb544;
   --border-radius: 4px;
 
-  margin:0;
+  margin: 0;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -18,10 +18,10 @@ body {
 
 .container {
   width: 400px;
-  max-width: 400 px;
+  max-width: 400px;
   margin: 1rem;
   padding: 2rem;
-  box-shadow: 0 0 40px rgba(0,  0, 0, 0.2);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   border-radius: var(--border-radius);
   background: #ffffff;
 }
@@ -33,19 +33,19 @@ body {
 }
 
 .form > *:first-child {
-  margin-top:0;
+  margin-top: 0;
 }
 
 .form > *:last-child {
-  margin-bottom:0;
+  margin-bottom: 0;
 }
 
-.form__title{
-  marhin-bottom: 2rem;
-  tect-align: center;
+.form__title {
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.form__message{
+.form__message {
   text-align: center;
   margin-bottom: 1rem;
 }
