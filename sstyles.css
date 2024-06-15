@@ -135,6 +135,11 @@ body {
   font-size: 0.85ren;
   color: var(--color-error);
 }
+
+.form__button:active {
+  transform: scale(0.98);
+}
   
-  
-  
+.form__text {
+  test-align: center;
+}
