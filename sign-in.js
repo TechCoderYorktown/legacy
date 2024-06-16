@@ -1,11 +1,3 @@
-function setFormMessage(formElement, type, message) {
-  const messageElement = formElement.querySelector(".form__message");
-
-  messageElement.textContent = message;
-  messageElement.classList.remove("form__message--success", "form__message--error");
-  messageElement.classList.add(`form__message--${type}`);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.querySelector("#login");
 
@@ -27,4 +19,25 @@ document.addEventListener("DOMContentLoaded", () => {
       setFormMessage(loginForm, "error", "Invalid username/password combination");
     }
   });
+
+  // Simulate getting the username from a session or cookie
+  const username = "Your_Actual_Username"; // Replace with actual logic to get the username
+
+  // Set the username in the dropdown if applicable
+  const dropbtn = document.querySelector(".username .dropbtn");
+  if (dropbtn) {
+    dropbtn.textContent = username;
+  }
+
+  // Handle logout
+  const logoutButton = document.getElementById("logout");
+  if (logoutButton) {
+    logoutButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      // Perform logout operations like clearing session or cookies if needed
+      alert("Logged out successfully");
+      // Redirect to the login page
+      window.location.href = "login.html";
+    });
+  }
 });
