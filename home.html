@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legacy</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // Check if the user is logged in
+        document.addEventListener("DOMContentLoaded", () => {
+            if (localStorage.getItem('isLoggedIn') !== 'true') {
+                // Redirect to login page if the user is not logged in
+                window.location.href = "https://techcoderyorktown.github.io/login.html";
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
                 <a href="index.html"><img src="legacy logo.jpg" alt="Legacy_Logo"></a>
-                </div>
+            </div>
             <div class="site-name">
                 <a href="index.html">Legacy</a>
-            </div>
             </div>
             <ul class="nav-links">
                 <li class="dropdown">
@@ -117,3 +125,5 @@
 
 </body>
 </html>
+
+
