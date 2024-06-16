@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (username === "bob" && password === "1234") {
       // Set a flag in localStorage to indicate the user is logged in
       localStorage.setItem('isLoggedIn', 'true');
+      // Store the username in localStorage
+      localStorage.setItem('username', username);
       // Redirect to home.html if the criteria match
       window.location.href = "https://techcoderyorktown.github.io/home.html";
     } else {
@@ -20,22 +22,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Simulate getting the username from a session or cookie
-  const username = "Your_Actual_Username"; // Replace with actual logic to get the username
+  // Set the username in the navigation bar dropdown
+  const setUsernameInNavbar = () => {
+    const username = localStorage.getItem('username');
+    if (username) {
+      const dropbtn = document.querySelector(".username .dropbtn");
+      if (dropbtn) {
+        dropbtn.textContent = username;
+      }
+    }
+  };
 
-  // Set the username in the dropdown if applicable
-  const dropbtn = document.querySelector(".username .dropbtn");
-  if (dropbtn) {
-    dropbtn.textContent = username;
-  }
+  // Call the function to set username on page load
+  setUsernameInNavbar();
 
   // Handle logout
   const logoutButton = document.getElementById("logout");
   if (logoutButton) {
     logoutButton.addEventListener("click", (e) => {
       e.preventDefault();
-      // Perform logout operations like clearing session or cookies if needed
-      alert("Logged out successfully");
+      // Clear localStorage and any other session data
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('username');
       // Redirect to the login page
       window.location.href = "login.html";
     });
