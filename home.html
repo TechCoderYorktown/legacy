@@ -11,6 +11,9 @@
             if (localStorage.getItem('isLoggedIn') !== 'true') {
                 // Redirect to login page if the user is not logged in
                 window.location.href = "https://techcoderyorktown.github.io/index.html";
+            } else {
+                // Remove the hidden class if the user is logged in
+                document.body.classList.remove('hidden');
             }
         });
     </script>
