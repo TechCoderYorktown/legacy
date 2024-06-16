@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Check if the input matches specific criteria
     if (username === "bob" && password === "1234") {
+      // Set a flag in localStorage to indicate the user is logged in
+      localStorage.setItem('isLoggedIn', 'true');
       // Redirect to home.html if the criteria match
       window.location.href = "https://techcoderyorktown.github.io/home.html";
     } else {
