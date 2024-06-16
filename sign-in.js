@@ -6,15 +6,18 @@ function setFormMessage(formElement, type, message) {
   messageElement.classList.add(`form__message--${type}`);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const loginForm = document.querySelector("#login");
+  document.querySelector("#linkLogin").addEventListener("click", (e) => {
+    e.preventDefault();
+    createAccountForm.classList.add("form--hidden");
+    loginForm.classList.remove("form--hidden");
+  });
 
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     // Extract user input values
-    const username = loginForm.querySelector("#Username").value;
-    const password = loginForm.querySelector("#Password").value;
+    const username = loginForm.querySelector("#username").value;
+    const password = loginForm.querySelector("#password").value;
 
     // Check if the input matches specific criteria
     if (username === "bob" && password === "1234") {
@@ -24,5 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Simulate an error message
       setFormMessage(loginForm, "error", "Invalid username/password combination");
     }
+  });
+
   });
 });
