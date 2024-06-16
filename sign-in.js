@@ -8,26 +8,18 @@ function setFormMessage(formElement, type, message) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.querySelector("#login");
-  const createAccountForm = document.querySelector("#createAccount");
 
   document.querySelector("#linkCreateAccount").addEventListener("click", (e) => {
     e.preventDefault();
-    loginForm.classList.add("form--hidden");
-    createAccountForm.classList.remove("form--hidden");
-  });
-
-  document.querySelector("#linkLogin").addEventListener("click", (e) => {
-    e.preventDefault();
-    createAccountForm.classList.add("form--hidden");
-    loginForm.classList.remove("form--hidden");
+    // No need to toggle form visibility since createAccountForm is removed
   });
 
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     // Extract user input values
-    const username = loginForm.querySelector("#username").value;
-    const password = loginForm.querySelector("#password").value;
+    const username = loginForm.querySelector("#Username").value;
+    const password = loginForm.querySelector("#Password").value;
 
     // Check if the input matches specific criteria
     if (username === "bob" && password === "1234") {
@@ -36,24 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       // Simulate an error message
       setFormMessage(loginForm, "error", "Invalid username/password combination");
-    }
-  });
-
-  createAccountForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Extract user input values
-    const username = createAccountForm.querySelector("#username").value;
-    const password = createAccountForm.querySelector("#password").value;
-    const emailAddress = createAccountForm.querySelector("#emailAddress").value;
-
-    // Check if the input matches specific criteria
-    if (username === "XX" && password === "XX") {
-      // Redirect to home.html if the criteria match
-      window.location.href = "https://techcoderyorktown.github.io/home.html";
-    } else {
-      // Simulate success message
-      setFormMessage(createAccountForm, "success", "Account created successfully");
     }
   });
 });
