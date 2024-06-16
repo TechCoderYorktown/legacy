@@ -20,6 +20,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Function to handle session expiration
+  function checkSessionExpiration() {
+    const SESSION_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes
+    const lastActivityTime = parseInt(localStorage.getItem('lastActivityTime')) || Date.now();
+
+    const currentTime = Date.now();
+    if (currentTime - lastActivityTime > SESSION_TIMEOUT_MS) {
+      // Session expired, clear localStorage and redirect to login page
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('username');
+      localStorage.removeItem('lastActivityTime');
+      window.location.href = "https://techcoderyorktown.github.io/index.html"; // Redirect to login page
+    } else {
+      // Update last activity time in localStorage
+      localStorage.setItem('lastActivityTime', currentTime.toString());
+    }
+  }
+
+  // Check session expiration periodically
+  setInterval(checkSessionExpiration, 1000 * 60); // Check every minute
+
   // Check if the user is logged in
   if (localStorage.getItem('isLoggedIn') === 'true') {
     updateUsernameInNavbar(); // Update username in navbar if logged in
@@ -43,6 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Set flags in localStorage to indicate the user is logged in
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('username', username);
+        localStorage.setItem('lastActivityTime', Date.now().toString()); // Record login time
         // Redirect to home.html if the criteria match
         window.location.href = "https://techcoderyorktown.github.io/home.html";
       } else {
@@ -60,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Clear localStorage to logout the user
       localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('username');
+      localStorage.removeItem('lastActivityTime');
       // Redirect to login page after logout
       window.location.href = "https://techcoderyorktown.github.io/index.html";
     });
