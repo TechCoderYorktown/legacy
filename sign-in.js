@@ -9,11 +9,6 @@ function setFormMessage(formElement, type, message) {
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.querySelector("#login");
 
-  document.querySelector("#linkCreateAccount").addEventListener("click", (e) => {
-    e.preventDefault();
-    // No need to toggle form visibility since createAccountForm is removed
-  });
-
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
