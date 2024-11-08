@@ -23,18 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to handle session expiration
   function checkSessionExpiration() {
     const SESSION_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes
-    const lastActivityTime = parseInt(localStorage.getItem('lastActivityTime')) || Date.now();
-
+    const lastActivityTime = parseInt(localStorage.getItem('lastActivityTime'), 10) || Date.now();
     const currentTime = Date.now();
+
     if (currentTime - lastActivityTime > SESSION_TIMEOUT_MS) {
-      // Session expired, clear localStorage
+      // Session expired, clear localStorage and redirect
       localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('username');
       localStorage.removeItem('lastActivityTime');
-      // Redirect to login page
       window.location.href = "https://techcoderyorktown.github.io/index.html";
     } else {
-      // Update last activity time in localStorage
+      // Update last activity time only if session is still valid
       localStorage.setItem('lastActivityTime', currentTime.toString());
     }
   }
@@ -46,8 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem('isLoggedIn') === 'true') {
     updateUsernameInNavbar(); // Update username in navbar if logged in
     document.body.classList.remove('hidden'); // Show body content
-  } else {
-    // Redirect to login page if not logged in
+  } else if (!loginForm) {
+    // Redirect to login page if not logged in and not on login page
     window.location.href = "https://techcoderyorktown.github.io/index.html";
   }
 
